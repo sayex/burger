@@ -1,5 +1,5 @@
 var mysql = require("mysql");
-var data = require("env.js");
+var data = require("./env");
 var connection;
 
 if (process.env.JAWSDB_URL){
