@@ -9,8 +9,8 @@ router.get("/", function (req, res) {
         var hbsObject = {
             burgers: data
         };
-        // eslint-disable-next-line no-console
-        console.log(hbsObject);
+        
+        // console.log(hbsObject);
         res.render("index", hbsObject);
     });
 });

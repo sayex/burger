@@ -5,8 +5,8 @@ var orm = {
         var queryString = "SELECT * FROM ??";
         connection.query(queryString, [tableInput], function (err, result) {
             if (err) throw err;
-            // eslint-disable-next-line no-console
-            console.log(result);
+            
+            // console.log(result);
             cb(result);
         });
     },
@@ -14,8 +14,8 @@ var orm = {
         var queryString = "INSERT INTO ?? (??) VALUES (?)";
         connection.query(queryString, [tableInput, coloumInput, val], function (err, result) {
             if (err) throw err;
-            // eslint-disable-next-line no-console
-            console.log(result);
+            
+            // console.log(result);
             cb(result);
         });
     },
@@ -23,8 +23,8 @@ var orm = {
         var queryString = "UPDATE ?? SET ?? =? WHERE ID =?";
         connection.query(queryString, [tableInput, coloumInput, val, id], function (err, result) {
             if (err) throw err;
-            // eslint-disable-next-line no-console
-            console.log(result);
+            
+            // console.log(result);
             cb(result);
         });
     }

@@ -14,8 +14,8 @@ $(function() {
             data: newDevourState
         }).then(
             function() {
-                // eslint-disable-next-line no-console
-                console.log("changed devoured to", newDevourState);
+                
+                // console.log("changed devoured to", newDevourState);
                 // Reload the page to get the updated list
                 location.reload();
             }
@@ -37,8 +37,8 @@ $(function() {
             data: newBurger
         }).then(
             function() {
-            // eslint-disable-next-line no-console
-                console.log("created new burger");
+            
+                // console.log("created new burger");
                 // Reload the page to get the updated list
                 // eslint-disable-next-line no-undef
                 location.reload();

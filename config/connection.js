@@ -2,6 +2,7 @@ var mysql = require("mysql");
 try {
     var data = require("./env");
 } catch (ex){
+    
     // eslint-disable-next-line no-console
     console.log(ex);
 }
