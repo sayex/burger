@@ -1,5 +1,11 @@
 var mysql = require("mysql");
-var data; //= require("./env");
+try {
+    var data = require("./env");
+} catch (ex){
+    // eslint-disable-next-line no-console
+    console.log(ex);
+}
+// var data = require("./env");
 var connection;
 
 if (process.env.JAWSDB_URL){
