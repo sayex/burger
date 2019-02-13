@@ -10,23 +10,22 @@ var orm = {
             cb(result);
         });
     },
-    insertOne: function (table, cols, vals, cb) {
+    insertOne: function (tableInput, coloumInput, val, cb) {
         var queryString = "INSERT INTO ?? (??) VALUES (?)";
-        connection.query(queryString, [table, cols, vals], function (err, result) {
-            if (err) {
-                throw err;
-            }
+        connection.query(queryString, [tableInput, coloumInput, val], function (err, result) {
+            if (err) throw err;
             // eslint-disable-next-line no-console
             console.log(result);
             cb(result);
         });
     },
-    upateOne: function () {
-        var queryString = "";
-        connection.query(queryString, [], function (err, result) {
+    updateOne: function (tableInput, coloumInput, val, id, cb) {
+        var queryString = "UPDATE ?? SET ?? =? WHERE ID =?";
+        connection.query(queryString, [tableInput, coloumInput, val, id], function (err, result) {
             if (err) throw err;
             // eslint-disable-next-line no-console
             console.log(result);
+            cb(result);
         });
     }
 };

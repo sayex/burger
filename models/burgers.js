@@ -9,7 +9,11 @@ var burgers = {
         orm.insertOne("burgers", cols, vals, function(res) {
             cb(res);
         });
-    },
+    }, updateOne: function(coloumInput, vals, id, cb) {
+        orm.updateOne("burgers", coloumInput, vals, id, function(res) {
+            cb(res);
+        });
+    }
 };
 
 
