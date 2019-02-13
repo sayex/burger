@@ -1,20 +1,24 @@
-var connection = require("./connection.js");
+var connection = require("./connection");
 
 var orm = {
-    selectAll: function (tableInput) {
+    selectAll: function (tableInput, cb) {
         var queryString = "SELECT * FROM ??";
         connection.query(queryString, [tableInput], function (err, result) {
             if (err) throw err;
             // eslint-disable-next-line no-console
             console.log(result);
+            cb(result);
         });
     },
-    insertOne: function () {
-        var queryString = "";
-        connection.query(queryString, [], function (err, result) {
-            if (err) throw err;
+    insertOne: function (table, cols, vals, cb) {
+        var queryString = "INSERT INTO ?? (??) VALUES (?)";
+        connection.query(queryString, [table, cols, vals], function (err, result) {
+            if (err) {
+                throw err;
+            }
             // eslint-disable-next-line no-console
             console.log(result);
+            cb(result);
         });
     },
     upateOne: function () {
